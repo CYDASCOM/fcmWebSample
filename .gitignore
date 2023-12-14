@@ -1,0 +1,73 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Eclipse Project #
+###################
+.settings
+.buildpath
+.project
+
+# PhpStorm Project #
+####################
+.idea
+.iml
+
+# moon ソース移植したため不要 #
+############################
+# app/Model/mbo/calculation
+
+# mysql slow query log
+docker/mysql57/logs
+
+# CakePHP #
+###########
+app/tmp/cache/*
+app/tmp/export/*
+app/tmp/import/*
+app/tmp/logs/*
+app/tmp/report/*
+app/tmp/sessions/*
+app/tmp/tests/*
+app/webroot/img/company/*
+#app/webroot/apps
+app/Work/UploadFile/*
+!empty
+.env
+
+# Multi language #
+###########
+app/Locale/*/LC_MESSAGES/default.po
+app/Locale/default_po.csv
+
+# Vagrant
+.vagrant
+cookbooks/
+.bundle/
+.chef/
+
+# OpenApi
+app/openapi.json
+
+# ctags
+TAGS
+
+
+# for client side development
+node_modules
+
+#Sass
+.sass-cache
+# app/webroot/apps
+
+# dotnet temporary compilation objects
+app/Vendor/*
+# docker
+docker-compose.*.yml
+.vscode/settings.json
