@@ -16,3 +16,6 @@ npm run dev
 
 ### Firebase Console 
 https://console.firebase.google.com/project/cydas-member-stg-ee2e7/overview
+
+## Configurations 
+https://cydas-member-stg-ee2e7.web.app/
