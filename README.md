@@ -1,4 +1,4 @@
-# fcmSample
+# FCM Web Sample
 
 This sample will help to undestand how the Firebase cloud message works, onMesssage and onBackgroundMessage handlers.
 
