@@ -16,6 +16,7 @@ const firebaseConfig = {
   appId: "1:458758423846:web:ca952d1116efb5f43dade7",
   measurementId: "G-JHR9H7BLDK"
 };
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -26,13 +27,13 @@ onMessage(messaging, (payload) => {
 getToken(messaging, { vapidKey: 'BOhTvkYJEjRnEqfatXNfyeaJs97BEUWsxxEXpnb0rEqxmazn2HVGwoZDamJZTrQxK7Vc_qwewrdCE0DECX8LU_k' }).then(async (currentToken) => {
   if (currentToken) {
     console.info("Web Token: ", currentToken)
-    const collectionPath = "cydas"; 
-    const uuId = "919fcfb3-ac6c-11ea-8d08-0a51e6767a16"; 
+    const collectionPath = "cydas";
+    const uuId = "919fcfb3-ac6c-11ea-8d08-0a51e6767a16";
     const documentPath = `${collectionPath}/${uuId}`;
-  await setDoc(doc(db, documentPath), {
-    web: currentToken,
-    mobile: "fKnbGC4cSE_enTdcwzDyDL:APA91bHcvCkOsS_ZZAhLCg0Y2SgjIGOX0Hw_ayCg5xLBlQMHy-HtUertopm9JIZOkF-6Bkiy2oyPTo0SYe9TK6s9JbxEDc-iWXtEH-10KlXGp4wMB3_0BNTJpVLug53HipiBxSuXDDlu"
-  });
+    await setDoc(doc(db, documentPath), {
+      web: currentToken,
+      mobile: "fKnbGC4cSE_enTdcwzDyDL:APA91bHcvCkOsS_ZZAhLCg0Y2SgjIGOX0Hw_ayCg5xLBlQMHy-HtUertopm9JIZOkF-6Bkiy2oyPTo0SYe9TK6s9JbxEDc-iWXtEH-10KlXGp4wMB3_0BNTJpVLug53HipiBxSuXDDlu"
+    });
   } else {
     console.info('No registration token available. Request permission to generate one.');
   }
@@ -42,17 +43,7 @@ getToken(messaging, { vapidKey: 'BOhTvkYJEjRnEqfatXNfyeaJs97BEUWsxxEXpnb0rEqxmaz
 </script>
 
 <template>
-  <header>
-    
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-    <div class="wrapper">
-      <HelloWorld msg="FCM Notification!" />
-      <nav>
-        <!-- <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink> -->
-      </nav>
-    </div>
-  </header>
+  <RouterView/>
 </template>
 
 <style scoped>
