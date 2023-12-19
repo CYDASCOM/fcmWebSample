@@ -1,30 +1,21 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD-UpcuJYqS75Nw2_nATZ-i6z9OdpQ3ETE",
-  authDomain: "cydas-member-stg-ee2e7.firebaseapp.com",
-  databaseURL: "https://cydas-member-stg-ee2e7-default-rtdb.firebaseio.com",
-  projectId: "cydas-member-stg-ee2e7",
-  storageBucket: "cydas-member-stg-ee2e7.appspot.com",
-  messagingSenderId: "458758423846",
-  appId: "1:458758423846:web:ca952d1116efb5f43dade7",
-  measurementId: "G-JHR9H7BLDK"
-};
+import { firebaseConfig, webPushKeyPair } from './components/firebaseConfig';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 const messaging = getMessaging();
+
+// When a message is received through onMessage, 
+// the UI can update in real-time as the user interacts with the web application.
 onMessage(messaging, (payload) => {
   console.log('Message received. ', payload);
 });
-getToken(messaging, { vapidKey: 'BOhTvkYJEjRnEqfatXNfyeaJs97BEUWsxxEXpnb0rEqxmazn2HVGwoZDamJZTrQxK7Vc_qwewrdCE0DECX8LU_k' }).then(async (currentToken) => {
+
+getToken(messaging, { vapidKey: webPushKeyPair?.webPushKeyPair }).then(async (currentToken) => {
   if (currentToken) {
     console.info("Web Token: ", currentToken)
     const collectionPath = "cydas";

@@ -47,11 +47,12 @@ import CodeEditor from "simple-code-editor";
       <ToolingIcon />
     </template>
     <template #heading>認証キーの生成 - Generate Auth Key </template>
-    以下のコードと<a href="https://colab.research.google.com/drive/1Ff7RTrLPpdAi-CHgQEY9v8obxPfeL0Ay?hl=ja#scrollTo=nY7bLAHUCNIJ" target="_blank"
-      rel="noopener">colab</a>を使用して認証キーを生成しました。
+    以下のコードと<a href="https://colab.research.google.com/drive/1Ff7RTrLPpdAi-CHgQEY9v8obxPfeL0Ay?hl=ja#scrollTo=nY7bLAHUCNIJ"
+      target="_blank" rel="noopener">colab</a>を使用して認証キーを生成しました。
     <p v-html="testData"></p>
-    Generate Authentication Key using below code and <a href="https://colab.research.google.com/drive/1Ff7RTrLPpdAi-CHgQEY9v8obxPfeL0Ay?hl=ja#scrollTo=nY7bLAHUCNIJ" target="_blank"
-      rel="noopener">colab</a>
+    Generate Authentication Key using below code and <a
+      href="https://colab.research.google.com/drive/1Ff7RTrLPpdAi-CHgQEY9v8obxPfeL0Ay?hl=ja#scrollTo=nY7bLAHUCNIJ"
+      target="_blank" rel="noopener">colab</a>
     <client-only>
       <code-editor width="100%" value="
       import requests
@@ -94,7 +95,7 @@ import CodeEditor from "simple-code-editor";
     <img src="../../src/assets/img/004.png" alt="" height="380px" width="auto">
     <img src="../../src/assets/img/005.png" alt="" height="380px" width="auto">
   </WelcomeItem>
-  
+
   <WelcomeItem>
     <template #icon>
       <CommunityIcon />
